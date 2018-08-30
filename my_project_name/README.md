@@ -124,7 +124,7 @@ setup your local php server
 After the installation you can follow the next tutorial to launch a local server. To avoid any tedious Xamp installation
 https://symfony.com/doc/3.4/setup/built_in_web_server.html
 
-for boostrap
+for bootstrap
 --------------
 Prerequise: 
 - Having brew already installed
