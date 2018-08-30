@@ -130,3 +130,13 @@ Prerequise:
 - Having brew already installed
 use yarn add bootstrap --dev 
 https://yarnpkg.com/en/docs/
+
+Curl installation
+--------------
+sudo apt-get install php-curl
+Or if you're using the old PHP5
+
+sudo apt-get install php5-curl
+or
+
+sudo apt-get install php5.6-curl
