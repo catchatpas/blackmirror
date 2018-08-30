@@ -75,3 +75,46 @@ Enjoy!
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 [14]: https://symfony.com/doc/current/setup/built_in_web_server.html
 [15]: https://symfony.com/doc/current/setup.html
+
+
+#The purpose of this project
+Create a library for the episode of the black mirror series.
+Based on API provided by Adneom 
+Requierments : (https://quentinkb.github.io/#contact)
+
+#Setup
+{
+    "code": 200,
+    "message": "Bravo, voici les informations nécessaires pour la suite du test.",
+    "user": {
+        "firstName": "Nicolas",
+        "lastName": "Bruyère",
+        "id": 137
+    },
+    "resources": {
+        "subject": {
+            "url": "https://quentinkb.github.io"
+        },
+        "api": {
+            "url": "http://adneomapisubject.herokuapp.com",
+            "path": "/blackmirror",
+            "headers": [
+                {
+                    "key": "X-Auth-Token",
+                    "value": "TokenADNTest2018"
+                }
+            ],
+            "method": "GET"
+        }
+    }
+}
+
+#Nice to have
+Postman : https://www.getpostman.com/
+
+#First step for a local env if it's already an existing local project
+git remote add origin git@github.com:catchatpas/blackmirror.git
+
+#setup your local php server
+After the installation you can follow the next tutorial to launch a local server. To avoid any tedious Xamp installation
+https://symfony.com/doc/3.4/setup/built_in_web_server.html
