@@ -7,13 +7,20 @@
                 <h1><span>Welcome to</span> {{listing.resources.name}} listing</h1>
             </div>
 
+            Genre: 
             <ul>
-                    {% for resource in listing.resources %}
-                        <li>{{ resource|e }}</li>
+                    {% for genre in listing.resources.genres %}
+                    <li>{{ genre|e }}</li>
                     {% endfor %}
-                </ul>
+             </ul>
 
 
+            episodes:
+            <ul>
+                    {% for episode in listing.resources._embedded.episodes %}
+                    <li>{{ episode.name|e }}</li>
+                    {% endfor %}
+             </ul>
 
         </div>
     </div>
