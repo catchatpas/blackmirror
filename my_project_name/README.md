@@ -79,7 +79,7 @@ Enjoy!
 
 #The purpose of this project
 Create a library for the episode of the black mirror series.
-Based on API provided by Adneom 
+Based on API provided by Adneom and the php framework symfony 3 (not 4 - :-( )
 Requierments : (https://quentinkb.github.io/#contact)
 
 #Setup
@@ -118,3 +118,9 @@ git remote add origin git@github.com:catchatpas/blackmirror.git
 #setup your local php server
 After the installation you can follow the next tutorial to launch a local server. To avoid any tedious Xamp installation
 https://symfony.com/doc/3.4/setup/built_in_web_server.html
+
+#for boostrap
+Prerequise: 
+- Having brew already installed
+use yarn add bootstrap --dev 
+https://yarnpkg.com/en/docs/
