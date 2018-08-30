@@ -15,11 +15,15 @@ class LibraryController extends Controller
 
     public function listAction(Request $request, Listing $listing)
     {
-        $list = $listing->listing("pass list");
-        var_dump($list);
+        $list = $listing->listing();
+        $sortedList = $this->sortList($list);
         // replace this example code with whatever you need
         return $this->render('library/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'listing' => $sortedList,
         ]);
+    }
+    private function sortList($list){
+        return $list;
     }
 }

@@ -4,10 +4,10 @@ namespace AppBundle\Utils;
 
 class Listing
 {
-    public function Listing ($string)
+    public function Listing ()
     {   
-        $string = $this->CallAPI("GET", "http://adneomapisubject.herokuapp.com/blackmirror", $token = "TokenADNTest2018");
-        return json_decode($string);
+        $list = $this->CallAPI("GET", "http://adneomapisubject.herokuapp.com/blackmirror", $token = "TokenADNTest2018");
+        return json_decode($list, true);
     }
 
     private function CallAPI($method, $url, $token, $data = false)
