@@ -1,0 +1,5 @@
+{
+    "require-dev": {
+        "symfony/web-server-bundle": "^3.4"
+    }
+}
