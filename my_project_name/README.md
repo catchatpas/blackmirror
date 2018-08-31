@@ -1,5 +1,8 @@
-Symfony Standard Edition
+Black mirro based on Symfony Standard Edition
 ========================
+
+Symfony specs and requirements
+------------
 
 **WARNING**: This distribution does not support Symfony 4. See the
 [Installing & Setting up the Symfony Framework][15] page to find a replacement
@@ -78,58 +81,18 @@ Enjoy!
 
 
 The purpose of this project
---------------
+==============
 Create a library for the episode of the black mirror series.
 Based on API provided by Adneom and the php framework symfony 3 (not 4 - :-( )
 Requierments : (https://quentinkb.github.io/#contact)
 
-Setup
+Setup blackmirror app
 --------------
-{
-    "code": 200,
-    "message": "Bravo, voici les informations nécessaires pour la suite du test.",
-    "user": {
-        "firstName": "Nicolas",
-        "lastName": "Bruyère",
-        "id": 137
-    },
-    "resources": {
-        "subject": {
-            "url": "https://quentinkb.github.io"
-        },
-        "api": {
-            "url": "http://adneomapisubject.herokuapp.com",
-            "path": "/blackmirror",
-            "headers": [
-                {
-                    "key": "X-Auth-Token",
-                    "value": "TokenADNTest2018"
-                }
-            ],
-            "method": "GET"
-        }
-    }
-}
+Some steps must be followed in order to be able to developpe for this app
 
-Nice to have
---------------
-Postman : https://www.getpostman.com/
-
-First step for a local env if it's already an existing local project
---------------
-git remote add origin git@github.com:catchatpas/blackmirror.git
-
-setup your local php server
---------------
-After the installation you can follow the next tutorial to launch a local server. To avoid any tedious Xamp installation
-https://symfony.com/doc/3.4/setup/built_in_web_server.html
-
-for bootstrap
---------------
-Prerequise: 
-- Having brew already installed
-use yarn add bootstrap --dev 
-https://yarnpkg.com/en/docs/
+Install all node
+-------------
+run npm install
 
 Curl installation
 --------------
@@ -140,6 +103,27 @@ sudo apt-get install php5-curl
 or
 
 sudo apt-get install php5.6-curl
+
+Tools as a Nice to have
+--------------
+Postman : https://www.getpostman.com/
+
+First step for a local env if it's already an existing local project
+--------------
+git remote add origin git@github.com:catchatpas/blackmirror.git
+
+setup your local php server
+--------------
+After the installation you can follow this tutorial to launch a local server. To avoid any tedious Xamp installation
+https://symfony.com/doc/3.4/setup/built_in_web_server.html
+
+for bootstrap
+--------------
+Prerequise: 
+- Having brew already installed
+use yarn add bootstrap --dev 
+https://yarnpkg.com/en/docs/
+
 
 Good to Know
 -------------
