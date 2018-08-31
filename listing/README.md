@@ -86,12 +86,31 @@ Create a library for the episode of the black mirror series.
 Based on API provided by Adneom and the php framework symfony 3 (not 4 - :-( )
 Requierments : (https://quentinkb.github.io/#contact)
 
+
 Setup blackmirror app
 --------------
 Some steps must be followed in order to be able to developpe for this app
 
+Installing the Web Server Bundle
+----------------
+```
+ cd listing/
+ composer require --dev symfony/web-server-bundle
+```
+then you can launch the php server
+
+```
+ php bin/console server:start
+```
+
+in case of troubles, please follow all the steps : 
+https://symfony.com/doc/3.4/setup/built_in_web_server.html
+
+
+
 Install all node
 -------------
+in the root folder
 run npm install
 
 Curl installation
