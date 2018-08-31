@@ -1,2 +1,53 @@
-episode
-{{id}}
+
+
+
+{% extends 'base.html.twig' %}
+{% block header %}
+<header class="bg-gradient" id="home" data-parallax="scroll" data-speed="0.5" data-image-src="{{episode.image.original}}">
+
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-inverse navbar-border navbar-transparent">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li>    <a class="nav-link" href="./">
+                        <i class="fas fa-arrow-left"></i> Back to home
+                    </a></li>
+            </ul>
+
+
+        </div>
+
+    </nav>
+
+
+    <section class="jumbotron text-center d-flex align-items-center">
+        <div class="container"  data-aos="fade-up">
+            <h1 class="display-3  ">{{episode.name}}</h1>
+            <p class="lead my-4  "> {{episode.summary | raw}}</p>
+            <p>
+                    <a href="#episode" class="btn btn-lg btn-outline " style="animation: arrowbounce 1s alternate infinite;">More infos</a>
+                </p>
+        </div>
+
+    </section>
+
+</header>
+{% endblock %}
+{% block body %}
+
+<div class="section bg-light" id="episode">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="display-4">More infos</h2>
+            </div>
+            <div class="row">
+                
+    
+            </div>
+        </div>
+    </div>
+   
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

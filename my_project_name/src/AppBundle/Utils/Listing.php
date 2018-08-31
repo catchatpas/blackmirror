@@ -2,14 +2,41 @@
 // src/AppBundle/Utils/Listing.php
 namespace AppBundle\Utils;
 
+/**
+ * Class that Trigger the API to get a list
+ *
+ * @author Nicolas Bruyere <bruyere.nicolas@gmail.com>
+ */
+
 class Listing
 {
+    /* *************************************************************************
+     *      CONSTANT ATTRIBUTES PART
+     * ********************************************************************** */
+    const TOKEN = "TokenADNTest2018";
+    const URL = "http://adneomapisubject.herokuapp.com/blackmirror";
+
+	/* *************************************************************************
+     *      PUBLIC METHODS PART
+     * ********************************************************************** */
     public function Listing ()
     {   
-        $list = $this->CallAPI("GET", "http://adneomapisubject.herokuapp.com/blackmirror", $token = "TokenADNTest2018");
+        $list = $this->CallAPI("GET", self::URL, $token = self::TOKEN);
         return json_decode($list, true);
     }
 
+	/* *************************************************************************
+     *      PRIVATE METHODS PART
+     * ********************************************************************** */
+    /**
+	 * Call to the API (GET, PUT, ...)
+	 *
+	 * @param string $method
+	 * @param string $url
+	 * @param string $token
+	 * @param bool $data
+     * @throws Exception
+	 */
     private function CallAPI($method, $url, $token, $data = false)
     {
         $curl = curl_init();
@@ -34,7 +61,7 @@ class Listing
 
         $headers = array();
         $headers[] = "x-auth-token: $token";
-        $headers[] = 'Content-Type: application/x-www-form-urlencoded; charset=utf-8';
+        $headers[] = "Content-Type: application/x-www-form-urlencoded; charset=utf-8";
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);

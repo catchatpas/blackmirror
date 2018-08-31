@@ -1,4 +1,9 @@
 <?php
+/**
+ * Library controller
+ *
+ * @author Nicolas Bruyere <bruyere.nicolas@gmail.com>
+ */
 
 namespace AppBundle\Controller;
 
@@ -30,11 +35,10 @@ class LibraryController extends Controller
         $list = $listing->listing();
 
         $episodeDetail = $this->getEpisode($episodeId, $list);
-
+        
         return $this->render('library/episode.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'episode' => 'to-replace',
-            'id' => $episodeDetail
+            'episode' => $episodeDetail
         ]);
     }
     private function sortList($list){
@@ -45,7 +49,10 @@ class LibraryController extends Controller
         $episodes = $list["resources"]["_embedded"]["episodes"];
         foreach($episodes as $key => $episode){
             if($episode["id"]==$episodeId){
-                $episodeDetail = $episode["name"];
+                // foreach($episode as $key=>$value){
+                //     $episodeDetail[$key] = $episode["name"];
+                // }
+                $episodeDetail = $episode;
             }
         }
         return $episodeDetail;

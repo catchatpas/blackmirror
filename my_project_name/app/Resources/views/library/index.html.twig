@@ -1,34 +1,78 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+<header class="bg-gradient home" id="home" data-parallax="scroll" data-speed="0.5" data-image-src="{{listing.resources.image.original}}">
+
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-inverse navbar-border navbar-transparent">
+        <div class="container">
+            <ul class="navbar-nav  d-none">
+                <li>    <a class="nav-link" href="#home">
+                        <i class="fas fa-arrow-up"></i> Back to top
+                    </a></li>
+            </ul>
+
+
+        </div>
+
+    </nav>
+
+
+    <section class="jumbotron text-center d-flex align-items-center">
+        <div class="container"  data-aos="fade-up">
+            <h1 class="display-3  ">{{listing.resources.name}}</h1>
+            <p class="lead my-4  "> {{listing.resources.summary | raw}}</p>
+            <p class="my-4  "> 
+                        
+                <span class="list-label">Genres:</span><span class="list-items">
+                        {% for genres in listing.resources.genres %}
+
+                        {{genres}} 
+                        {% endfor %}
+                </span>
+                                
+            </p>
+            <p>
+                <a href="#episode" class="btn btn-lg btn-outline " style="animation: arrowbounce 1s alternate infinite;">Episode list</a>
+            </p>
+        </div>
+
+    </section>
+
+</header>
+{% endblock %}
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Welcome to</span> {{listing.resources.name}} listing</h1>
+<div class="section bg-light" id="episode">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2 class="display-4">Listing of all episodes</h2>
+            <p class="lead py-2">It's seems that the 2014 chrimstas one is missing</p>
+        </div>
+        <div class="row">
+            {% for episode in listing.resources._embedded.episodes %}
+
+            <div class="col-md-6 col-lg-4" >
+                <div class="card mb-4"   data-aos="flip-up">
+                    <div class="card-block">
+                        <div class="media">
+                            <a class="media-body p-2" href="./{{episode.id}}">            
+                                {% set text = episode.summary | raw %}
+                                <h5 class="mt-0">{{ episode.name|e }} </h5> 
+                                <span class="badge badge-pill badge-info">season: {{ episode.season|e }} </span> <span class="badge badge-pill badge-light">episode: {{ episode.number|e }} </span><br />
+                                {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text | raw }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            Genre: 
-            <ul>
-                    {% for genre in listing.resources.genres %}
-                    <li>{{ genre|e }}</li>
-                    {% endfor %}
-             </ul>
-
-
-         
-            <div class="list-group">
-                <h2 class="list-group-item list-group-item-action active">episodes:</h2>
-                    {% for episode in listing.resources._embedded.episodes %}
-                  
-                    <a href="./{{episode.id}}" class="list-group-item list-group-item-action">{{ episode.name|e }}</a>
-                   
-                    {% endfor %}
-             </div>
+            {% endfor %}
 
         </div>
     </div>
-{% endblock %}
+</div>
 
-{% block stylesheets %}
 
-{% endblock %}
+        {% endblock %}
+
+        {% block stylesheets %}
+
+        {% endblock %}
