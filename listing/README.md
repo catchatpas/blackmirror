@@ -1,6 +1,12 @@
 Black mirror based on Symfony Standard Edition
 ========================
 
+Dev specs and requirements
+------------
+It's preferable to use a Unix environment or a vagrant box
+Developped under ubuntu 16 and mac osx leopard
+
+
 Symfony specs and requirements
 ------------
 
