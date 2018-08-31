@@ -20,7 +20,7 @@
     <section class="jumbotron text-center d-flex align-items-center">
         <div class="container"  data-aos="fade-up">
             <h1 class="display-3  ">{{listing.resources.name}}</h1>
-            <p class="lead my-4  "> {{listing.resources.summary | raw}}</p>
+            <div class="display-5">{{listing.resources.summary | raw}}</div>
             <p class="my-4  "> 
                         
                 <span class="list-label">Genres:</span><span class="list-items">
@@ -69,7 +69,25 @@
         </div>
     </div>
 </div>
-
+<div id="rating"></div>
+<script>
+        $(document).ready(function() {
+            $("#rating").rating({
+                rate: 8.9, // Start to show this rates when page loads
+                total: 7, // Number of total votes
+                stars: 10, // Number of stars
+                readOnly: false,
+                // You can translate in your language
+                textVote: "rate",
+                textVotes: "rates",
+                readOnlyMessage: "If you want to rate please login",
+                readOnlyLink: "./Login"
+            }, function(selected) {
+                // Insert here an ajax call to save the user selection
+                alert("Your rate is " + selected + "!");
+            });
+        });
+ </script>
 
         {% endblock %}
 

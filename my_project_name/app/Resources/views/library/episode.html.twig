@@ -21,10 +21,18 @@
 
     <section class="jumbotron text-center d-flex align-items-center">
         <div class="container"  data-aos="fade-up">
-            <h1 class="display-3  ">{{episode.name}}</h1>
-            <p class="lead my-4  "> {{episode.summary | raw}}</p>
+            <h1 class="display-3 d-inline-block">{{episode.name}} <small><span class="badge badge-primary align-top">S.{{episode.season}} E.{{episode.number}}</span></small></h1>
+            <div>
+                <ul class="list-inline text-light">
+                    <li class="list-inline-item">Airdate </li>
+                    <li class="list-inline-item"> | </li>
+                    <li class="list-inline-item">{{episode.airdate}}</li>
+
+                 </ul>
+            </div>
+            <div class="display-5"> {{episode.summary | raw}}</div>
             <p>
-                    <a href="#episode" class="btn btn-lg btn-outline " style="animation: arrowbounce 1s alternate infinite;">More infos</a>
+                    <a href="{{episode.url}}" target="_blank" class="btn btn-lg btn-outline " style="animation: arrowbounce 1s alternate infinite;">More infos</a>
                 </p>
         </div>
 
@@ -34,17 +42,7 @@
 {% endblock %}
 {% block body %}
 
-<div class="section bg-light" id="episode">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2 class="display-4">More infos</h2>
-            </div>
-            <div class="row">
-                
-    
-            </div>
-        </div>
-    </div>
+
    
 {% endblock %}
 
