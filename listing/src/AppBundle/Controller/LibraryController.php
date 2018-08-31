@@ -14,7 +14,7 @@ use AppBundle\Utils\Listing;
 class LibraryController extends Controller
 {
     /**
-     * @Route("/Library/")
+     * @Route("/")
      */
     public function listAction(Request $request, Listing $listing)
     {
@@ -28,7 +28,7 @@ class LibraryController extends Controller
     }
     
     /**
-     * @Route("/Library/{episodeId}", name="episode_display")
+     * @Route("/{episodeId}", name="episode_display")
      */
     public function getepisodeAction(Request $request, Listing $listing, $episodeId)
     {
