@@ -128,3 +128,8 @@ https://yarnpkg.com/en/docs/
 Good to Know
 -------------
 Special (2014) - white christmas is missing from the api
+
+TO DO
+------------- 
+* clean out js from views
+* Add more documention on every classes and functions
