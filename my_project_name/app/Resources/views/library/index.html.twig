@@ -26,14 +26,15 @@
                             <ul class="list-inline text-light">
                                 <li class="list-inline-item">Genres:</li>
                                 {% for genres in listing.resources.genres %}
-                                <li class="list-inline-item">{{genres}} </li>
-                                
+                                <li class="list-inline-item">{{genres}} </li>                                
                                 {% endfor %}
                                 <li class="list-inline-item"> | </li>
                                 <li class="list-inline-item">Rating:</li>
-                                <li class="list-inline-item text-success">{{listing.resources.rating.average}}/10 </li>
+                                <li class="list-inline-item text-success font-weight-bold">{{listing.resources.rating.average}}/10 </li>
                                 <li class="list-inline-item"> | </li>
-            
+                                <li class="list-inline-item">Available on:</li>
+                                <li class="list-inline-item text-warning">{{listing.resources.webChannel.name}}</li>
+   
                              </ul>
                         </div>
                 
