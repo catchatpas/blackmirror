@@ -26,11 +26,15 @@
                                 <li class="list-inline-item">{{genres}} </li>                                
                                 {% endfor %}
                                 <li class="list-inline-item"> | </li>
+                                <li class="list-inline-item">Premiered:</li>
+                                <li class="list-inline-item text-info font-weight-bold">{{listing.resources.premiered}}</li>
+
+                                <li class="list-inline-item"> | </li>
                                 <li class="list-inline-item">Rating:</li>
                                 <li class="list-inline-item text-success font-weight-bold">{{listing.resources.rating.average}}/10 </li>
                                 <li class="list-inline-item"> | </li>
                                 <li class="list-inline-item">Available on:</li>
-                                <li class="list-inline-item text-warning">{{listing.resources.webChannel.name}}</li>
+                                <li class="list-inline-item text-warning"><a class="text-warning" href="{{listing.resources.officialSite}}" target="_blank">{{listing.resources.webChannel.name}}</li>
    
                         </ul>
                     </div>                            
