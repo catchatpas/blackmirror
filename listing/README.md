@@ -1,4 +1,4 @@
-Black mirro based on Symfony Standard Edition
+Black mirror based on Symfony Standard Edition
 ========================
 
 Symfony specs and requirements
