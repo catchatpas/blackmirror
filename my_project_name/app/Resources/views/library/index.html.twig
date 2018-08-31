@@ -68,9 +68,11 @@
                         <div class="media">
                             <a class="media-body p-2" href="./{{episode.id}}">            
                                 {% set text = episode.summary | raw %}
+                                {% set text = text|length > 100 ? text|slice(0, 100) ~ '...' : text | raw %}
+
                                 <h5 class="mt-0">{{ episode.name|e }} </h5> 
                                 <span class="badge badge-pill badge-info">season: {{ episode.season|e }} </span> <span class="badge badge-pill badge-light">episode: {{ episode.number|e }} </span><br />
-                                {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text | raw }}
+                                <p>{{  text | raw }}</p>
                             </a>
                         </div>
                     </div>
