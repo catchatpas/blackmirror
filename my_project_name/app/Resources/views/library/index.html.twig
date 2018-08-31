@@ -22,13 +22,24 @@
             <h1 class="display-3  ">{{listing.resources.name}}</h1>
             <div class="display-5">{{listing.resources.summary | raw}}</div>
             <p class="my-4  "> 
-                        
-                <span class="list-label">Genres:</span><span class="list-items">
-                        {% for genres in listing.resources.genres %}
+                    <div>
+                            <ul class="list-inline text-light">
+                                <li class="list-inline-item">Genres:</li>
+                                {% for genres in listing.resources.genres %}
+                                <li class="list-inline-item">{{genres}} </li>
+                                
+                                {% endfor %}
+                                <li class="list-inline-item"> | </li>
+                                <li class="list-inline-item">Rating:</li>
+                                <li class="list-inline-item text-success">{{listing.resources.rating.average}}/10 </li>
+                                <li class="list-inline-item"> | </li>
+            
+                             </ul>
+                        </div>
+                
 
-                        {{genres}} 
-                        {% endfor %}
                 </span>
+
                                 
             </p>
             <p>
@@ -69,25 +80,6 @@
         </div>
     </div>
 </div>
-<div id="rating"></div>
-<script>
-        $(document).ready(function() {
-            $("#rating").rating({
-                rate: 8.9, // Start to show this rates when page loads
-                total: 7, // Number of total votes
-                stars: 10, // Number of stars
-                readOnly: false,
-                // You can translate in your language
-                textVote: "rate",
-                textVotes: "rates",
-                readOnlyMessage: "If you want to rate please login",
-                readOnlyLink: "./Login"
-            }, function(selected) {
-                // Insert here an ajax call to save the user selection
-                alert("Your rate is " + selected + "!");
-            });
-        });
- </script>
 
         {% endblock %}
 
