@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block header %}
 <header class="bg-gradient home" id="home" data-parallax="scroll" data-speed="0.5" data-image-src="{{listing.resources.image.original}}">
 
@@ -15,15 +14,13 @@
         </div>
 
     </nav>
-
-
     <section class="jumbotron text-center d-flex align-items-center">
         <div class="container"  data-aos="fade-up">
             <h1 class="display-3  ">{{listing.resources.name}}</h1>
             <div class="display-5">{{listing.resources.summary | raw}}</div>
             <p class="my-4  "> 
                     <div>
-                            <ul class="list-inline text-light">
+                        <ul class="list-inline text-light">
                                 <li class="list-inline-item">Genres:</li>
                                 {% for genres in listing.resources.genres %}
                                 <li class="list-inline-item">{{genres}} </li>                                
@@ -35,21 +32,14 @@
                                 <li class="list-inline-item">Available on:</li>
                                 <li class="list-inline-item text-warning">{{listing.resources.webChannel.name}}</li>
    
-                             </ul>
-                        </div>
-                
-
-                </span>
-
-                                
+                        </ul>
+                    </div>                            
             </p>
             <p>
                 <a href="#episode" class="btn btn-lg btn-outline " style="animation: arrowbounce 1s alternate infinite;">Episode list</a>
             </p>
         </div>
-
     </section>
-
 </header>
 {% endblock %}
 {% block body %}
@@ -57,7 +47,7 @@
     <div class="container">
         <div class="section-title text-center">
             <h2 class="display-4">Listing of all episodes</h2>
-            <p class="lead py-2">It's seems that the 2014 chrimstas one is missing</p>
+            <p class="lead py-2">It's seems that the 2014 christmas one is missing</p>
         </div>
         <div class="row">
             {% for episode in listing.resources._embedded.episodes %}
