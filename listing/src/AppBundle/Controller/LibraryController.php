@@ -33,7 +33,6 @@ class LibraryController extends Controller
     public function getepisodeAction(Request $request, Listing $listing, $episodeId)
     {
         $list = $listing->listing();
-
         $episodeDetail = $this->getEpisode($episodeId, $list);
         
         return $this->render('library/episode.html.twig', [
@@ -45,13 +44,9 @@ class LibraryController extends Controller
         return $list;
     }
     private function getEpisode($episodeId, $list){
-
         $episodes = $list["resources"]["_embedded"]["episodes"];
         foreach($episodes as $key => $episode){
             if($episode["id"]==$episodeId){
-                // foreach($episode as $key=>$value){
-                //     $episodeDetail[$key] = $episode["name"];
-                // }
                 $episodeDetail = $episode;
             }
         }
