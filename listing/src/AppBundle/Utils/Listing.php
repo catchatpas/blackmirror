@@ -1,6 +1,7 @@
 <?php
 // src/AppBundle/Utils/Listing.php
 namespace AppBundle\Utils;
+use Symfony\Component\DependencyInjection\ContainerInterface; // <- Add this
 
 /**
  * Class that Trigger the API to get a list
@@ -13,15 +14,21 @@ class Listing
     /* *************************************************************************
      *      CONSTANT ATTRIBUTES PART
      * ********************************************************************** */
-    const TOKEN = "TokenADNTest2018";
-    const URL = "http://adneomapisubject.herokuapp.com/blackmirror";
 
+    private $token = "";
+    private $url = "";
 	/* *************************************************************************
      *      PUBLIC METHODS PART
      * ********************************************************************** */
+    public function __construct(ContainerInterface $container){
+        $this->container = $container;
+        $this->token = $this->container->getParameter('token');
+        $this->url = $this->container->getParameter('url');
+    }
+
     public function Listing ()
     {   
-        $list = $this->CallAPI("GET", self::URL, $token = self::TOKEN);
+        $list = $this->CallAPI("GET", $this->url, $token = $this->token);
         return json_decode($list, true);
     }
 

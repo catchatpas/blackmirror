@@ -7,6 +7,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    token : 'TokenADNTest2018'
+    url : 'http://adneomapisubject.herokuapp.com/blackmirror'
 
 framework:
     #esi: ~
